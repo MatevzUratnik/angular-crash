@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { UiService } from '../../services/ui.service';
 import { Subscription } from 'rxjs';
 import { Task } from '../../Task';
 
@@ -15,8 +16,8 @@ export class AddTaskComponent implements OnInit {
   showAddTask: boolean;
   subscription: Subscription;
 
-  constructor() {
-    
+  constructor(private uiService: UiService) {//changes value on showAddTask, calls this value in add-task-html ngif
+    this.subscription = this.uiService.onToggle().subscribe((value) => (this.showAddTask = value));
   }
 
   ngOnInit(): void {}
