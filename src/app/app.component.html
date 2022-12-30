@@ -1,3 +1,12 @@
+<div *ngIf="isLoggedIn()">
+    <div class="container2">Hi and welcome!</div>
+    <div class="container2">{{ userInfo?.info?.name }}</div>
+    <div class="container2"><img src="{{ userInfo?.info?.picture }}"></div><!-- to do: img issue does not initially load -->
+    <div class="container2"><button (click)="logout()">Logout from Google</button></div>
+  </div>
+
+
+
 <div class="container">
     <app-header></app-header>
     <router-outlet></router-outlet>

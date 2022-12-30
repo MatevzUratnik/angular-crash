@@ -13,6 +13,7 @@ import { TaskItemComponent } from './components/task-item/task-item.component';
 import { AddTaskComponent } from './components/add-task/add-task.component';
 import { AboutComponent } from './components/about/about.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { OAuthModule } from 'angular-oauth2-oidc'
 
 const appRoutes: Routes = [
   {path: '', component: TasksComponent},
@@ -35,7 +36,8 @@ const appRoutes: Routes = [
     FontAwesomeModule,
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes, { enableTracing: true })
+    RouterModule.forRoot(appRoutes, { enableTracing: true }),
+    OAuthModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
